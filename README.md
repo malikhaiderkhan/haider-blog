@@ -1,24 +1,114 @@
-# README
+# 📗 Table of Contents
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- [📖 About the Project](#about-project)
+  - [🛠 Built With](#built-with)
+    - [Tech Stack](#tech-stack)
+    - [Key Features](#key-features)
+- [💻 Getting Started](#getting-started)
+  - [Setup](#setup)
+- [👥 Authors](#authors)
+- [🔭 Future Features](#future-features)
+- [🤝 Contributing](#contributing)
+- [⭐️ Show your support](#support)
+- [🙏 Acknowledgements](#acknowledgements)
+- [📝 License](#license)
 
-Things you may want to cover:
+<!-- PROJECT DESCRIPTION -->
 
-* Ruby version
+# 📖 BLOG APP <a name="about-project"></a>
 
-* System dependencies
+**BLOG APP** is a simply creating a data model
 
-* Configuration
+## 🛠 Built With <a name="built-with"></a>
 
-* Database creation
+### Tech Stack <a name="tech-stack"></a>
 
-* Database initialization
+<details>
+<summary>Ruby on Rails</summary>
+  <ul>
+    <li><a href="https://www.postgresql.org/">Ruby on Rails</a></li>
+  </ul>
+</details>
 
-* How to run the test suite
+<!-- Features -->
 
-* Services (job queues, cache servers, search engines, etc.)
+### Key Features <a name="key-features"></a>
 
-* Deployment instructions
+- **Validations and Model specs**
 
-* ...
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- GETTING STARTED -->
+
+## 💻 Getting Started <a name="getting-started"></a>
+
+### Setup
+
+Clone this repository to your desired folder:
+
+Example commands:
+
+```sh
+  cd haider-blog
+  git clone git@github.com:malikhaiderkhan/haider-blog.git
+```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- AUTHORS -->
+
+## 👥 Authors <a name="authors"></a>
+
+
+👤 **malikhaiderkhan**
+
+- GitHub: [@malikhaiderkhan](https://github.com/malikhaiderkhan)
+- Twitter: [@malikhaiderkha](https://twitter.com/malikhaiderkha)
+- LinkedIn: [@malikhaiderkhan](https://www.linkedin.com/in/malik-haider-khan-b53188140)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🔭 Future Features <a name="future-features"></a>
+
+- [ ] **Processing data in models**
+- [ ] **Controllers**
+- [ ] **Controllers specs**
+- [ ] **Views**
+- [ ] **Forms**
+- [ ] **Integration specs for Views and fixing n+1 problems**
+- [ ] **Add Devise**
+- [ ] **Add authorization rules**
+- [ ] **Add API endpoints**
+- [ ] **API documentation**
+
+<!-- CONTRIBUTING -->
+
+## 🤝 Contributing <a name="contributing"></a>
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- SUPPORT -->
+
+## ⭐️ Show your support <a name="support"></a>
+
+If you like this project kindly give stars.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- ACKNOWLEDGEMENTS -->
+
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
+
+I would like to thank Microverse and my peers.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LICENSE -->
+
+## 📝 License <a name="license"></a>
+
+This project is [MIT](./LICENSE) licensed.
