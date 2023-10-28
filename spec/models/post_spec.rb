@@ -40,25 +40,19 @@ RSpec.describe Post, type: :model do
   end
 
   it 'should update posts counter' do
-    subject.save
-    comment1 = subject.comments.create(user: first_user, content: 'Comment 1')
-    comment2 = subject.comments.create(user: first_user, content: 'Comment 2')
-
-    subject.update_posts_counter
-    subject.reload
-
-    expect(subject.comments_counter).to eq(2)
-    expect(subject.likes_counter).to eq(0)
+    Post.create(author: first_user, title: 'Hello', text: 'This is my first post')
+    Post.create(author: first_user, title: 'Hello', text: 'This is my 2nd post')
+    expect(first_user.posts_counter).to eq(3)
   end
 
   it 'should return five recent comments' do
     subject.save
-    comment1 = subject.comments.create(user: first_user, content: 'Comment 1')
-    comment2 = subject.comments.create(user: first_user, content: 'Comment 2')
-    comment3 = subject.comments.create(user: first_user, content: 'Comment 3')
-    comment4 = subject.comments.create(user: first_user, content: 'Comment 4')
-    comment5 = subject.comments.create(user: first_user, content: 'Comment 5')
-    comment6 = subject.comments.create(user: first_user, content: 'Comment 6')
+    subject.comments.create(user: first_user, text: 'Comment 1')
+    comment2 = subject.comments.create(user: first_user, text: 'Comment 2')
+    comment3 = subject.comments.create(user: first_user, text: 'Comment 3')
+    comment4 = subject.comments.create(user: first_user, text: 'Comment 4')
+    comment5 = subject.comments.create(user: first_user, text: 'Comment 5')
+    comment6 = subject.comments.create(user: first_user, text: 'Comment 6')
 
     recent_comments = subject.five_recent_comments
 
