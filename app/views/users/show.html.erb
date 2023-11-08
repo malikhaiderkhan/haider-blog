@@ -1,31 +1,27 @@
-<div class='main-users'>
-  <div class='user-box'>
-    <div class='user-name'>
-      <h1><%= @user.name %></h1>
-    </div>
-    <div class='user-posts'>
-      <p>Number of posts: <%= @user.posts_counter %></p>
-    </div>
-  </div>
+<div class="row m-lg-4 m-md-3 m-2 justify-content-center align-items-center">
+  <%= render 'partials/img', user: @user %>
+  <%= render 'partials/user_box', user: @user %>
 </div>
 
-<div class='bio'>
+<div class="justify-content-center row align-items-center m-4">
+<div class="border p-2 col-lg-8 col-11">
+  <h5>Bio</h5>
   <p><%= @user.bio %></p>
 </div>
-
-<div class='posts'>
-  <% if @user.posts.present? %>
-    <% @user.posts.each do |post| %>
-      <div class='post'>
-        <h2><%= post.title %></h2>
-        <p><%= post.text %></p>
-        <p>Number of comments: <%= post.comments_counter %></p>
-        <p>Number of likes: <%= post.likes_counter %></p>
-      </div>
-    <% end %>
-  <% else %>
-    <p>No posts yet.</p>
-  <% end %>
 </div>
 
-<%= link_to 'See all posts', user_posts_path(@user), class: 'button' %>
+<% if @user.posts.any? %>
+<% @user.posts.each_with_index do |post, index| %>
+  <a href="/users/<%= @user.id %>/posts/<%= post.id %>" class="text-decoration-none" >
+  <%= render "partials/post", post: post, post_index: index + 1 %>
+  </a>
+<% end %>
+<a href="/users/<%= @user.id %>/posts" class="btn btn-primary col-2 mt-3" >See all posts</a>
+<% else %>
+<div class="justify-content-center row align-items-center m-4">
+<div class="border p-2 col-lg-8 col-11">
+  <h5> No posts yet </h5>
+</div>
+</div>
+<% end %>
+</div>

@@ -1,15 +1,12 @@
+<% if @users.any? %>
 <% @users.each do |user| %>
-  <div class='main-users '>
-    <div class='img'>
-      <img src="<%= user.photo %>"  alt="photo" class="img-fluid"/>
-    </div>
-    <div class='user-box '>
-        <div class='user-name'>
-          <h1><%= link_to user.name, user_path(user) %></h1>
-        </div>
-        <div class='user-posts'>
-          <p>Number of posts: <%= user.posts_counter %></p>
-        </div>
-    </div>
+  <a href="/users/<%= user.id %>" class="text-decoration-none">
+  <div class="row m-lg-4 m-md-3 m-2 justify-content-center align-items-center">
+    <%= render 'partials/img', user: user %>
+    <%= render 'partials/user_box', user: user %>
   </div>
+  </a>
+  <% end %>
+  <% else %>
+  <h1>No users</h1>
 <% end %>
