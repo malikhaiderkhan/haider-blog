@@ -12,5 +12,9 @@ class PostsController < ApplicationController
   end
 
   # GET /posts/1 or /posts/1.json
-  def show; end
+  def show
+    @post = Post.find(params[:id])
+    @posts = @post.author.posts
+    @post_index = @post.author.posts.order(created_at: :desc).pluck(:id).index(@post.id) + 1
+  end
 end
