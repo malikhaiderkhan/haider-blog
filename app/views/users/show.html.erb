@@ -16,7 +16,9 @@
   <%= render "partials/post", post: post, post_index: index + 1 %>
   </a>
 <% end %>
-<a href="/users/<%= @user.id %>/posts" class="btn btn-primary col-2 mt-3" >See all posts</a>
+<div class="row justify-content-center align-items-center">
+<a href="/users/<%= @user.id %>/posts" class="btn btn-primary col-2 m-3" >See all posts</a>
+</div>
 <% else %>
 <div class="justify-content-center row align-items-center m-4">
 <div class="border p-2 col-lg-8 col-11">
