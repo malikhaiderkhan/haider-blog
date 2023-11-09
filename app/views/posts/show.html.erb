@@ -10,14 +10,4 @@
   </div>
 </div>
 
-<div class="justify-content-center align-items-center row mt-4">
-<div class="border p-2 col-lg-8 col-md-11 col-11 ">
-  <% if @post.comments.any? %>
-  <% @post.comments.each do |comment| %>
-    <p><%= comment.user.name %>: <%= comment.text %></p>
-  <% end %>
-  <% else %>
-    <p>No comments yet</p>
-  <% end %>
-</div>
-</div>
+<%= render 'partials/comment', comment: @comment %>
