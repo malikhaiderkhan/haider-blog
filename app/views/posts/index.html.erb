@@ -1,1 +1,26 @@
-<h1>Here is a list of posts for given user</h1>
+<div class="row m-lg-4 m-md-3 m-2 justify-content-center align-items-center">
+  <%= render 'partials/img', user: @user %>
+  <%= render 'partials/user_box', user: @user %>
+</div>
+
+<% @user.posts.each_with_index do |post, index| %>
+  <a href="/users/<%= @user.id %>/posts/<%= post.id %>" class="text-decoration-none">
+    <%= render "partials/post", post: post, post_index: index + 1 %>
+    </a>
+    
+    <div class="justify-content-center align-items-center row mt-1">
+      <div class="border p-2 col-lg-8 col-md-11 col-11 ">
+        <% if post.comments.any? %>
+          <% post.five_recent_comments.each do |comment| %>
+            <p><%= comment.user.name %>: <%= comment.text %></p>
+          <% end %>
+        <% else %>
+          <p>No comments yet</p>
+        <% end %>
+      </div>
+    </div>
+<% end %>
+
+<div class="row justify-content-center align-items-center mt-12">
+  <a href="/users/<%= @user.id %>/posts" class="btn btn-primary col-2 m-3" >Pagination</a>
+</div>

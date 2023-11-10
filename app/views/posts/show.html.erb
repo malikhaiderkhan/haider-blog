@@ -1,1 +1,13 @@
-<h1>Here is the details of post</h1>
+<div class="justify-content-center align-items-center row mt-4">
+  <div class="border p-2 col-lg-8 col-md-11 col-11 ">
+   <div class="d-flex justify-content-between">
+    <h5>Post # <%= @post_index %> by <%= @post.author.name %></h5>
+    <p class="text-end">Comments:  <%= @post.comments_counter %> , Likes:  <%= @post.likes_counter %> </p>
+   </div>
+    <br>
+    <p><%= @post.title %></p>
+    <p><%= @post.text %></p>
+  </div>
+</div>
+
+<%= render 'partials/comment', comment: @comment %>

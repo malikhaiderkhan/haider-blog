@@ -1,1 +1,29 @@
-<h1>Here is the details of user</h1>
+<div class="row m-lg-4 m-md-3 m-2 justify-content-center align-items-center">
+  <%= render 'partials/img', user: @user %>
+  <%= render 'partials/user_box', user: @user %>
+</div>
+
+<div class="justify-content-center row align-items-center m-4">
+<div class="border p-2 col-lg-8 col-11">
+  <h5>Bio</h5>
+  <p><%= @user.bio %></p>
+</div>
+</div>
+
+<% if @user.posts.any? %>
+<% @user.three_recent_posts.each_with_index do |post, index| %>
+  <a href="/users/<%= @user.id %>/posts/<%= post.id %>" class="text-decoration-none" >
+  <%= render "partials/post", post: post, post_index: index + 1 %>
+  </a>
+<% end %>
+<div class="row justify-content-center align-items-center">
+<a href="/users/<%= @user.id %>/posts" class="btn btn-primary col-2 m-3" >See all posts</a>
+</div>
+<% else %>
+<div class="justify-content-center row align-items-center m-4">
+<div class="border p-2 col-lg-8 col-11">
+  <h5> No posts yet </h5>
+</div>
+</div>
+<% end %>
+</div>
