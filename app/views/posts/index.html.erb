@@ -11,7 +11,7 @@
     <div class="justify-content-center align-items-center row mt-1">
       <div class="border p-2 col-lg-8 col-md-11 col-11 ">
         <% if post.comments.any? %>
-          <% post.comments.first(5).each do |comment| %>
+          <% post.five_recent_comments.each do |comment| %>
             <p><%= comment.user.name %>: <%= comment.text %></p>
           <% end %>
         <% else %>
