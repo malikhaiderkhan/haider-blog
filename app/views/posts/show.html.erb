@@ -11,3 +11,4 @@
 </div>
 
 <%= render 'partials/comment', comment: @comment %>
+<%= button_to "Like", user_post_likes_path(user_id: @user.id, post_id: @post.id), method: :post %>
