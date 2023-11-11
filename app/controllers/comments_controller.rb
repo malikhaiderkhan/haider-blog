@@ -1,17 +1,26 @@
 class CommentsController < ApplicationController
-    def create
-      @comment = current_user.comments.build(comment_params.merge(post_id: params[:post_id]))
-  
-      if @comment.save
-        redirect_to user_post_path(@user, @comment.post), notice: 'Comment was successfully created.'
-      else
-        render 'posts/show'
-      end
-    end
-  
-    private
-  
-    def comment_params
-      params.require(:comment).permit(:text)
-    end
+  def new
+    @user = current_user
+    @post = Post.find(params[:post_id])
+    @comment = Comment.new
   end
+
+  def create
+    @user = current_user
+    @comment = @user.comments.build(comment_params)
+    @comment.post_id = params[:post_id]
+
+    if @comment.save
+      flash[:success] = 'Comment created successfully!'
+    else
+      flash[:error] = 'Comment could not be saved.'
+    end
+    redirect_to user_post_path(current_user, @comment.post_id)
+  end
+
+  private
+
+  def comment_params
+    params.require(:comment).permit(:text)
+  end
+end

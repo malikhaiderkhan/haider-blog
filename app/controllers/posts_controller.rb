@@ -12,6 +12,7 @@ class PostsController < ApplicationController
     @index = params[:index]
     @post_index = @user.posts.order(created_at: :desc).pluck(:id).index(@post.id) + 1
     @comment = Comment.new
+    @comments = @post.comments
   end
 
   def new
