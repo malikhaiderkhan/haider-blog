@@ -1,6 +1,15 @@
 <%= form_with(model: [@user, @post.comments.build], url: user_post_comments_path(@user, @post), method: :post) do |form| %>
+  <div class="container">
+  <div class="row justify-content-center align-items-center ">
+  <div class="col-6 border border-primary rounded-1  border-2 p-5">
+
+  <div class="form-group justify-content-center">
   <%= form.label :text %>
   <%= form.text_area :text %>
+  </div>
 
-  <%= form.submit "Add Comment" %>
+  <%= form.submit "Add Comment", class: 'btn btn-primary' %>
+  </div>
+  </div>
+  </div>
 <% end %>
