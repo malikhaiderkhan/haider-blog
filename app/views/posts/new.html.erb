@@ -4,13 +4,13 @@
   <div class="col-6 border border-primary rounded-1  border-2 p-5">
   <h1 class="text-center">Add new post</h1>
   <div class="form-group justify-content-center">
-    <%= form.label :title %>
-    <%= form.text_field :title, class: 'form-control' %>
+    <%= form.label :title, class: 'form-label' %>
+    <%= form.text_field :title, class: 'form-control', placeholder: "Your Post title..." %>
   </div>
   
   <div class="form-group my-2 py-2">
-    <%= form.label :text %>
-    <%= form.text_area :text, class: 'form-control' %>
+    <%= form.label :text, class: 'form-label' %>
+    <%= form.text_area :text, class: 'form-control', placeholder: "Your Post content..." %>
   </div>
 
   <div class="d-flex justify-content-center">
