@@ -13,9 +13,11 @@
 <%= render 'partials/comment', comment: @comment %>
 
 <div class="row justify-content-center align-items-center mt-3">
-<%= button_to "Like", user_post_likes_path(user_id: @user.id, post_id: @post.id), method: :post, class: 'btn btn-primary' %>
+<div class="col-6 justify-content-end d-flex">
+<%= button_to "Like", user_post_likes_path(user_id: @user.id, post_id: @post.id), method: :post, class: 'btn btn-primary w-20' %>
 </div>
 
-<div class="row justify-content-center align-items-center mt-3">
-  <%= link_to "Add Comment", new_user_post_comment_path(@user, @post), class: 'btn btn-primary' %>
+<div class="col-6">
+  <%= link_to "Add Comment", new_user_post_comment_path(@user, @post), class: 'btn btn-primary w-25' %>
+</div>
 </div>
