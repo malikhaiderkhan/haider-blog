@@ -3,12 +3,15 @@
   <div class="row justify-content-center align-items-center ">
   <div class="col-6 border border-primary rounded-1  border-2 p-5">
 
-  <div class="form-group justify-content-center">
-  <%= form.label :text %>
-  <%= form.text_area :text %>
+  <div class="form-group my-2 py-2">
+  <%= form.label :text, class: 'form-label' %>
+  <%= form.text_area :text, class: 'form-control', placeholder: "Your comment here..." %>
   </div>
 
-  <%= form.submit "Add Comment", class: 'btn btn-primary' %>
+  <div class="d-flex justify-content-center">
+  <%= form.submit "Add Comment", class: 'btn btn-primary mt-3' %>
+  </div>
+
   </div>
   </div>
   </div>
