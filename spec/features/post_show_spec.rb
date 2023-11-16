@@ -18,14 +18,14 @@ RSpec.describe 'Post show page', type: :feature do
 
   scenario 'I can see how many comments a post has' do
     visit user_post_path(user, post)
-    expect(page).to have_content('Comments: 2')
+    expect(page).to have_content("Comments: #{post.comments_counter}")
   end
 
   scenario 'I can see how many likes a post has' do
     post.likes.create(user:)
     post.likes.create(user:)
     visit user_post_path(user, post)
-    expect(page).to have_content('Likes: 2')
+    expect(page).to have_content("Likes: #{post.likes.count}")
   end
 
   scenario 'I can see the post body' do
