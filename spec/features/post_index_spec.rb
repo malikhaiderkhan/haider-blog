@@ -30,23 +30,23 @@ RSpec.describe 'Post index page', type: :feature do
   end
 
   scenario 'I can see the first comments on a post' do
-    comment = post.comments.create(user: user, text: 'Test Comment')
+    comment = post.comments.create(user:, text: 'Test Comment')
     visit user_posts_path(user)
     expect(page).to have_content("#{comment.user.name}: #{comment.text}")
   end
 
   scenario 'I can see how many comments a post has' do
-    post.comments.create(user: user, text: 'Test Comment 1')
-    post.comments.create(user: user, text: 'Test Comment 2')
+    post.comments.create(user:, text: 'Test Comment 1')
+    post.comments.create(user:, text: 'Test Comment 2')
     visit user_posts_path(user)
-    expect(page).to have_content("Comments: 2")
+    expect(page).to have_content('Comments: 2')
   end
 
   scenario 'I can see how many likes a post has' do
-    post.likes.create(user: user)
-    post.likes.create(user: user)
+    post.likes.create(user:)
+    post.likes.create(user:)
     visit user_posts_path(user)
-    expect(page).to have_content("Likes: 2")
+    expect(page).to have_content('Likes: 2')
   end
 
   scenario 'I can see a section for pagination' do

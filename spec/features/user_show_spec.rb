@@ -22,7 +22,7 @@ RSpec.describe 'User show page', type: :feature do
     user = User.create(name: 'User', posts_counter: 3)
 
     visit user_path(user)
-    
+
     expect(page).to have_content("Number of posts: #{user.posts_counter}")
   end
 
@@ -33,7 +33,7 @@ RSpec.describe 'User show page', type: :feature do
 
   scenario 'I can see the user\'s first 3 posts' do
     visit user_path(user)
-    user.three_recent_posts.each_with_index do |post, index|
+    user.three_recent_posts.each_with_index do |post, _index|
       expect(page).to have_content(post.title)
     end
   end
