@@ -70,10 +70,6 @@ Example commands:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Processing data in models**
-- [ ] **Controllers**
-- [ ] **Controllers specs**
-- [ ] **Views**
 - [ ] **Forms**
 - [ ] **Integration specs for Views and fixing n+1 problems**
 - [ ] **Add Devise**
