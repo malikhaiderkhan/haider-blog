@@ -10,6 +10,10 @@
 </div>
 </div>
 
+<div class="row justify-content-center align-items-center">
+<a href="/users/<%= @user.id %>/posts/new" class="btn btn-primary col-2 m-3" >Create a New Post</a>
+</div>
+
 <% if @user.posts.any? %>
 <% @user.three_recent_posts.each_with_index do |post, index| %>
   <a href="/users/<%= @user.id %>/posts/<%= post.id %>" class="text-decoration-none" >
