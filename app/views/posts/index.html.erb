@@ -3,7 +3,7 @@
   <%= render 'partials/user_box', user: @user %>
 </div>
 
-<% @user.posts.each_with_index do |post, index| %>
+<% @user.posts.includes(:comments, :author).each_with_index do |post, index| %>
   <a href="/users/<%= @user.id %>/posts/<%= post.id %>" class="text-decoration-none">
     <%= render "partials/post", post: post, post_index: index + 1 %>
     </a>
@@ -11,7 +11,7 @@
     <div class="justify-content-center align-items-center row mt-1">
       <div class="border p-2 col-lg-8 col-md-11 col-11 ">
         <% if post.comments.any? %>
-          <% post.five_recent_comments.each do |comment| %>
+          <% post.comments.includes(:user).first(5).each do |comment| %>
             <p><%= comment.user.name %>: <%= comment.text %></p>
           <% end %>
         <% else %>
