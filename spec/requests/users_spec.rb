@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe UsersController, type: :request do
   describe 'GET #index' do
+
     before { get users_path }
 
     it 'returns a 200 OK status' do
@@ -13,7 +14,7 @@ RSpec.describe UsersController, type: :request do
     end
 
     it 'includes the correct placeholder text in the response body' do
-      expect(response.body).to include('Here is a list of users')
+      expect(response.body).to include('Tom')
     end
   end
 
@@ -29,7 +30,7 @@ RSpec.describe UsersController, type: :request do
     end
 
     it 'includes the correct placeholder text in the response body' do
-      expect(response.body).to include('Here is the details of user')
+      expect(response.body).to include('Tom')
     end
   end
 end
