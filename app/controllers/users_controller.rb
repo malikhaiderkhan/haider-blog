@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  # GET /users or /users.json
+  before_action :authenticate_user!
   def index
     @users = User.includes(:posts).all
   end
